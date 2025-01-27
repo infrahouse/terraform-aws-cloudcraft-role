@@ -1,7 +1,6 @@
 # terraform-aws-cloudcraft-role
 
 Use this module to create an IAM role for CloudCraft.
-
 ## Requirements
 
 | Name | Version |
@@ -30,7 +29,9 @@ No modules.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_external_id"></a> [external\_id](#input\_external\_id) | External ID value that cloudcraft provides. Format is 9333c73a-f9e1-4cbb-beb4-39a981e914b6 | `string` | n/a | yes |
 
 ## Outputs
 

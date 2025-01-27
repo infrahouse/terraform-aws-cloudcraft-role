@@ -7,8 +7,10 @@ data "aws_iam_policy_document" "assume_role" {
       type        = "AWS"
     }
     condition {
-      test     = "StringEquals"
-      values   = ["9333c73a-f9e1-4cbb-beb4-39a981e914b6"]
+      test = "StringEquals"
+      values = [
+        var.external_id
+      ]
       variable = "sts:ExternalId"
     }
   }
