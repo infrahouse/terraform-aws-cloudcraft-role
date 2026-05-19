@@ -1,0 +1,24 @@
+framework:
+  - terraform
+
+skip-check:
+  # CKV_AWS_355: IAM policy uses "*" as resource for describe/list/get actions.
+  # These read-only actions cannot be scoped to specific ARNs per AWS IAM documentation.
+  - CKV_AWS_355
+
+  # CKV_AWS_356: IAM policy uses "*" as resource for restrictable actions.
+  # Cloudcraft requires broad read-only access across all resources to generate
+  # infrastructure diagrams. Scoping to specific ARNs would break discovery.
+  - CKV_AWS_356
+
+  # CKV_TF_1: Module sources use version pins from private registry (registry.infrahouse.com).
+  # InfraHouse standard: exact version pinning from registry.infrahouse.com.
+  # Renovate manages version updates via individual PRs for explicit review.
+  - CKV_TF_1
+
+  # CKV_TF_2: Module sources use version pins from private registry.
+  # Same as CKV_TF_1 - Renovate handles module version updates.
+  - CKV_TF_2
+
+compact: true
+quiet: false
